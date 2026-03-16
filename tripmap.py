@@ -80,10 +80,10 @@ def create_map(photo_dir='photos'):
         </style>
     """))
 
-    folium.TileLayer('openstreetmap', name='Normaali kartta', overlay=False).add_to(m)
+    folium.TileLayer('openstreetmap', name='Street Map', overlay=False, control=True, show=True).add_to(m)
     folium.TileLayer(
-        tiles='https://mt1.google.com{x}&y={y}&z={z}', 
-        attr='Google', name='Satelliitti', overlay=False, show=False
+        tiles='https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', 
+        attr='Google', name='Satellite View', overlay=False, control=True, show=False
     ).add_to(m)
 
     kaikki_pisteet = []
